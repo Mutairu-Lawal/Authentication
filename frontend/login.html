@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/styles.css" />
+    <meta name="description" content="simple authencation page" />
+    <link rel="stylesheet" href="./static/css/styles.css" />
     <title>Simple | Auth</title>
   </head>
   <body>
@@ -39,14 +40,35 @@
             </div>
             <div class="form-tag">
               <label for="password">Password</label>
-              <input type="Password" id="password" />
+              <div class="input align-center">
+                <input type="Password" id="password" />
+                <div class="eyes-icons">
+                  <img
+                    src="./static/images/eye-regular.svg"
+                    alt="open eye"
+                    width="20"
+                    class="open-eye"
+                  />
+                </div>
+              </div>
+
               <span class="password-helper-text"
                 >Must be at least 8 characters</span
               >
             </div>
             <div class="form-tag">
               <label for="confirm-password">Confirm Password</label>
-              <input type="Password" id="confirm-password" />
+              <div class="input align-center">
+                <input type="Password" id="confirm-password" />
+                <div class="eyes-icons">
+                  <img
+                    src="./static/images/eye-slash-regular.svg"
+                    alt="open eye"
+                    width="20"
+                    class="closed-eye"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div class="page-2 hidden">
