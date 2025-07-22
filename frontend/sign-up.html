@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="simple authencation page" />
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <title>Sign up | Simple Auth</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-navigation-bar">
+        <div class="navlist align-center nav-list active completed">
+          <div class="nav-circle align-center">
+            <p class="page-num">1</p>
+            <div class="checkmark"></div>
+          </div>
+          <p class="page-info">Account info</p>
+        </div>
+        <div class="navlist align-center nav-list active">
+          <div class="nav-circle align-center">
+            <p class="page-num">2</p>
+            <div class="checkmark"></div>
+          </div>
+          <p class="page-info">Personal info</p>
+        </div>
+      </div>
+      <h1 class="form-heading">Create Your Account</h1>
+      <div class="form-container">
+        <form action="/login">
+          <div class="page-1">
+            <div class="form-tag">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+              />
+              <span class="error-message">field is required</span>
+            </div>
+            <div class="form-tag">
+              <label for="password">Password</label>
+              <div class="input align-center">
+                <input type="Password" id="password" />
+                <div class="eyes-icons">
+                  <img
+                    src="./static/images/eye-regular.svg"
+                    alt="open eye"
+                    width="20"
+                    class="open-eye"
+                  />
+                </div>
+              </div>
+
+              <span class="password-helper-text"
+                >Must be at least 8 characters</span
+              >
+            </div>
+            <div class="form-tag">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="input align-center">
+                <input type="Password" id="confirm-password" />
+                <div class="eyes-icons">
+                  <img
+                    src="./static/images/eye-slash-regular.svg"
+                    alt="open eye"
+                    width="20"
+                    class="closed-eye"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-2 hidden">
+            <div class="form-tag">
+              <label for="email">First Name</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+              />
+            </div>
+            <div class="form-tag">
+              <label for="email">Last Name</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+              />
+            </div>
+            <div class="form-tag">
+              <label for="email">Phone Number</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+              />
+            </div>
+          </div>
+          <button
+            class="btn btn-primary hidden"
+            type="submit"
+            aria-label="button"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+      <div class="nav-btns">
+        <div class="btn btn-primary" aria-label="button">Continue</div>
+      </div>
+      <div class="footer-nav">
+        <p>Already have an account?</p>
+        <a href="./login.html">Login</a>
+      </div>
+    </div>
+  </body>
+</html>

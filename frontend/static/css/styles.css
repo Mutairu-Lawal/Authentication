@@ -37,9 +37,6 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
@@ -47,15 +44,20 @@ body {
   text-align: center;
   width: 100%;
   max-width: 400px;
+  margin-top: 2em;
 }
 
 @media (min-width: 600px) {
   body {
     padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .container {
     border-radius: 12px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.692);
+    margin-top: 0;
   }
 }
 
@@ -134,7 +136,8 @@ body {
 
 .form-heading {
   margin: 12px 0 8px;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 /* Form tag */
@@ -231,6 +234,29 @@ body {
   font-weight: normal;
 }
 
-.footer-nav a {
+.footer-nav a,
+.forgot-password a {
   color: var(--primary-color);
+}
+
+/* login page below */
+
+.login-page .page-heading {
+  font-size: larger;
+  font-weight: bold;
+  color: var(--text-subtle);
+}
+
+.login-page--remember-me-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.remember-me input {
+  accent-color: var(--primary-color);
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
 }
