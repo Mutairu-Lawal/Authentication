@@ -260,3 +260,13 @@ body {
   height: 18px;
   margin-right: 4px;
 }
+
+/* forgot password */
+
+.forgot-password-page > p {
+  margin: 1em 0;
+}
+
+.forgot-password-page .heading {
+  font-weight: 700;
+}
