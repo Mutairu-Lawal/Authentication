@@ -84,7 +84,7 @@ let userData = {
   username: '',
 };
 
-let currentPage = 2;
+let currentPage = 1;
 
 const renderPage = () => {
   progressNavigationBar.innerHTML = '';
@@ -118,6 +118,7 @@ const renderPage = () => {
 
   const inputs = document.querySelectorAll('.input input');
   const formTags = document.querySelectorAll('.form-tag');
+  const sendBtn = sendBtnContainer.querySelector('.btn');
 
   inputs.forEach((input) => {
     input.addEventListener('input', (e) => {
@@ -130,6 +131,15 @@ const renderPage = () => {
     if (e.code === 'Enter') {
       validateData(inputs);
     }
+  });
+
+  sendBtn?.addEventListener('click', () => {
+    validateData(inputs);
+    const hasError = [...formTags].some((form) =>
+      form.classList.contains('error')
+    );
+    if (hasError) return;
+    console.log(userData);
   });
 
   // ADD EVENTLISTENER TO THE PASSWORD EYES ICONS
@@ -209,8 +219,6 @@ function navigatePage(inputs, formTags) {
   navBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const btnName = e.currentTarget.innerHTML.trim();
-      console.log(btnName);
-
       if (btnName === 'Continue') {
         validateData(inputs);
         const hasError = [...formTags].some((form) =>
