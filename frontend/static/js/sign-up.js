@@ -113,7 +113,7 @@ const renderPage = () => {
     sendBtnContainer.querySelector('.btn')?.remove();
   } else {
     formsContainer.innerHTML = renderFormTags(forms.slice(3));
-    sendBtnContainer.innerHTML = `<div class="btn btn-primary">Send</div>`;
+    sendBtnContainer.innerHTML = `<div class="btn btn-primary" aria-label="button">Send</div>`;
   }
 
   const inputs = document.querySelectorAll('.input input');
