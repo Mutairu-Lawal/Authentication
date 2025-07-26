@@ -84,7 +84,7 @@ let userData = {
   username: '',
 };
 
-let currentPage = 1;
+let currentPage = 2;
 
 const renderPage = () => {
   progressNavigationBar.innerHTML = '';
@@ -139,6 +139,16 @@ const renderPage = () => {
       form.classList.contains('error')
     );
     if (hasError) return;
+    // REFORMAT THE NUMBER
+    let number = userData.phoneNumber;
+    if (number.startsWith('+234')) {
+      number = number.slice(4);
+      console.log(number);
+    }
+
+    // REMOVING THE CONFTIM_PASSWORD FROM THE OBJECT
+    delete userData.confirmPassword;
+
     console.log(userData);
   });
 
@@ -262,7 +272,7 @@ function validateData(inputs) {
       } else if (inputName === 'password') {
         const helperTextEl = formTag.querySelector('.password-helper-text');
         if (helperTextEl) {
-          if (value.length < 1) {
+          if (value.length < 8) {
             helperTextEl.classList.add('danger');
           } else {
             helperTextEl.classList.remove('danger');
