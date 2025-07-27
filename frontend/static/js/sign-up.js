@@ -1,5 +1,7 @@
 'use strict';
 
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+
 const continueBtn = document.querySelector('.js-continue-btn');
 const sendBtnContainer = document.querySelector('.send-btn');
 const backBtn = document.querySelector('.js-back-btn');
@@ -84,7 +86,7 @@ let userData = {
   username: '',
 };
 
-let currentPage = 2;
+let currentPage = 1;
 
 const renderPage = () => {
   progressNavigationBar.innerHTML = '';
@@ -139,15 +141,27 @@ const renderPage = () => {
       form.classList.contains('error')
     );
     if (hasError) return;
+
     // REFORMAT THE NUMBER
-    let number = userData.phoneNumber;
-    if (number.startsWith('+234')) {
-      number = number.slice(4);
-      console.log(number);
+    let { phoneNumber } = userData;
+    if (phoneNumber.startsWith('+')) {
+      phoneNumber = formatInternationalPhone(phoneNumber)
+        ?.split(' ')
+        .splice(1)
+        .join('');
+      userData = { ...userData, phoneNumber: `0${phoneNumber}` };
     }
 
     // REMOVING THE CONFTIM_PASSWORD FROM THE OBJECT
     delete userData.confirmPassword;
+
+    // CONVERT ALL INPUTS TO LOWERCASE EXPECT PASSWORD
+    Object.keys(userData).forEach((key) => {
+      userData = {
+        ...userData,
+        [key]: key !== 'password' ? userData[key].toLowerCase() : userData[key],
+      };
+    });
 
     console.log(userData);
   });
@@ -286,4 +300,13 @@ function validateData(inputs) {
       }
     }
   });
+}
+
+function formatInternationalPhone(input) {
+  const phoneNumber = parsePhoneNumberFromString(input);
+  if (phoneNumber && phoneNumber.isValid()) {
+    return phoneNumber.formatInternational(); // e.g. +234 801 234 5678
+  } else {
+    return false;
+  }
 }

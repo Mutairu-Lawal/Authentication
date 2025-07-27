@@ -2,18 +2,23 @@
 
 const formInputs = document.querySelectorAll('.form-tag input');
 const formTags = document.querySelectorAll('.form-tag');
-const form = document.querySelector('form');
+const sendBtn = document.querySelector('.form-container button');
 let user = { email: '', password: '' };
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+sendBtn.addEventListener('click', () => {
   validateData();
   const hasError = [...formTags].some((form) =>
     form.classList.contains('error')
   );
 
   if (!hasError) {
-    console.log(user);
+    // CONVERT ALL INPUTS TO LOWERCASE EXPECT PASSWORD
+    Object.keys(user).forEach((key) => {
+      user = {
+        ...user,
+        [key]: key !== 'password' ? user[key].toLowerCase() : user[key],
+      };
+    });
   }
 });
 

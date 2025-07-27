@@ -12,9 +12,9 @@
       <div class="progress-navigation-bar js-progress-navigation-bar"></div>
       <h1 class="form-heading">Create Your Account</h1>
       <div class="form-container">
-        <form action="/login">
+        <form>
           <div class="forms js-forms"></div>
-          <div class="send-btn"></div>
+          <div class="send-btn send-btn-container"></div>
         </form>
       </div>
       <div class="nav-btns">
@@ -27,6 +27,13 @@
       </div>
     </div>
     <!-- scripts -->
+    <script type="importmap">
+      {
+        "imports": {
+          "libphonenumber-js": "https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.38/+esm"
+        }
+      }
+    </script>
     <script type="module" src="./static/js/sign-up.js"></script>
   </body>
 </html>
