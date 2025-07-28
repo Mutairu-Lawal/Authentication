@@ -41,6 +41,8 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  place-content: center;
 }
 
 .container {
