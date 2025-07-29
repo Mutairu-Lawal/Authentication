@@ -41,6 +41,8 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  place-content: center;
 }
 
 .container {
@@ -51,7 +53,7 @@ body {
   margin-top: 2em;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 425px) {
   body {
     padding: 1em;
     display: flex;
